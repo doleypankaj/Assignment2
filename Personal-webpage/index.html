@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="personalApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Professional Webpage</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body ng-controller="ProfileController">
+
+    
+    <nav class="navbar">
+        <ul>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#hobbies">Hobbies</a></li>
+            <li><a href="#family">Family</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#certificates">Certificates</a></li>
+            <li><a href="#contributions">Contributions</a></li>
+        </ul>
+    </nav>
+
+   
+    <header class="header">
+        <h1>{{person.name}}</h1>
+        <p>{{person.title}}</p>
+    </header>
+
+    
+    <section id="about" class="about section">
+        <i class="fas fa-user-circle"></i>
+        <h2>About Me</h2>
+        <p>{{person.about}}</p>
+    </section>
+
+    
+    <section id="hobbies" class="hobbies section">
+        <i class="fas fa-heart"></i>
+        <h2>Hobbies</h2>
+        <ul>
+            <li ng-repeat="hobby in person.hobbies">{{hobby}}</li>
+        </ul>
+    </section>
+
+   
+    <section id="family" class="family section">
+        <i class="fas fa-users"></i>
+        <h2>Family Members</h2>
+        <ul>
+            <li ng-repeat="member in person.family">{{member}}</li>
+        </ul>
+    </section>
+
+    
+    <section id="education" class="education section">
+        <i class="fas fa-graduation-cap"></i>
+        <h2>Education</h2>
+        <p><strong>School:</strong> {{person.school}}</p>
+        <p><strong>College:</strong> {{person.college}}</p>
+    </section>
+
+    
+    <section id="certificates" class="certificates section">
+        <i class="fas fa-award"></i>
+        <h2>Certificates & Awards</h2>
+        <ul>
+            <li ng-repeat="certificate in person.certificates">{{certificate}}</li>
+        </ul>
+    </section>
+
+    
+    <section id="contributions" class="contributions section">
+        <i class="fas fa-hand-holding-heart"></i>
+        <h2>Contributions to Society</h2>
+        <p>{{person.contributions}}</p>
+    </section>
+
+    
+    <footer class="footer">
+        <p>Contact Me: <a href="mailto:{{person.email}}">{{person.email}}</a></p>
+    </footer>
+
+    
+    <script src="app.js"></script>
+</body>
+</html>
